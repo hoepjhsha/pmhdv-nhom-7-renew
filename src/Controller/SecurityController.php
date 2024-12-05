@@ -1,4 +1,11 @@
 <?php
+/**
+ * @project pmhdv-nhom-7-renew
+ * @author hoepjhsha
+ * @email hiepnguyen3624@gmail.com
+ * @date 04/12/2024
+ * @time 11:12
+ */
 
 namespace App\Controller;
 
@@ -15,10 +22,8 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
-        // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
